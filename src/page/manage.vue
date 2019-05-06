@@ -61,26 +61,13 @@
         </keep-alive>
       </el-col>
     </el-row>
-    <userList/>
   </div>
 </template>
 
 <script>
-import userList from './userList.vue';
 import { log } from 'util';
 export default {
   name: 'manage',
-  components: { userList },
-  data() {
-    return {
-      test: '这是一个测试用的变量'
-    }
-  },
-  methods: {
-    sayName() {
-      console.log('我是manage组件');
-    },
-  },
   computed: {
     defaultActive: function() {
       return this.$route.path.replace('/', '');

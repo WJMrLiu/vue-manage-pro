@@ -25,7 +25,6 @@
 <script>
 import headTop from '_com/headTop';
 import { getUserList } from '@/api/getData';
-import { findComponentUpward } from '../utils/assist.js'; // 由一个组件，向上找到最近的指定组件；
 export default {
   name: 'userList',
   data() {
@@ -66,13 +65,7 @@ export default {
     this.initData();
     this.getUsers();
   },
-  mounted() {
-    const manageComponents = findComponentUpward(this, 'manage');
-    if (manageComponents) {
-      console.log(manageComponents.test); // 这是一个测试用的变量
-      manageComponents.sayName(); // 我是manage组件
-    }
-  },
+  mounted() {},
   methods: {
     async initData() {
       try {

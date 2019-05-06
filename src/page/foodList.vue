@@ -426,7 +426,6 @@ export default {
         //   userId: restaurant.userId
         // }
       };
-
       this.selectMenu = { label: category.name, value: row.category_id };
       this.tableData.splice(row.index, 1, { ...this.selectTable });
       this.$nextTick(() => {
@@ -471,7 +470,6 @@ export default {
       const isRightType =
         file.type === "image/jpeg" || file.type === "image/png";
       const isLt2M = file.size / 1024 / 1024 < 2;
-
       if (!isRightType) {
         this.$message.error("上传头像图片只能是 JPG 格式!");
       }

@@ -17,6 +17,11 @@
   "dependencies": {
     "echarts": "^3.5.4",
     "element-ui": "^1.2.9",
+    "lodash": "^4.17.11",
+    "lodash.debounce": "^4.0.8",
+    "lodash.findlast": "^4.6.0",
+    "nprogress": "^0.2.0",
+    "resize-detector": "^0.2.0",
     "time-formater": "^1.0.1",
     "vue": "^2.2.6",
     "vue-quill-editor": "^2.2.1",
