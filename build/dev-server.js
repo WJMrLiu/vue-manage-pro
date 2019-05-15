@@ -55,7 +55,7 @@ var context = config.dev.context
 
 switch(process.env.NODE_ENV){
     case 'local': var proxypath = 'http://localhost:8001'; break;
-    case 'online': var proxypath = 'http://elm.cangdu.org'; break;
+    case 'online': var proxypath = 'https://easy-mock.com/mock/5c4d6266857c7f670bc96b76/example'; break;
 }
 var options = {
     target: proxypath,

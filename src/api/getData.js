@@ -10,13 +10,13 @@ export const login = data => fetch('/user/login', data, 'POST');
  * 退出
  */
 
-export const signout = () => fetch('/admin/singout');
+export const signout = () => fetch('/api/singout');
 
 /**
  * 获取用户信息
  */
 
-export const getAdminInfo = () => fetch('/admin/info');
+export const getAdminInfo = () => fetch('/api/upload');
 
 /**
  * api请求量
@@ -36,19 +36,6 @@ export const apiAllCount = () => fetch('/statis/api/count');
  */
 
 export const apiAllRecord = () => fetch('/statis/api/all');
-
-/**
- * 用户注册量
- */
-
-export const userCount = date => fetch('/statis/user/' + date + '/count');
-
-/**
- * 某一天订单数量
- */
-
-export const orderCount = date => fetch('/statis/order/' + date + '/count');
-
 
 /**
  * 某一天管理员注册量
@@ -196,12 +183,6 @@ export const deleteFood = data => fetch('/user/deleteUser', data, 'POST');
  */
 
 export const getUserList = data => fetch('/user/getUserList', data, 'POST');
-
-/**
- * 获取用户数量
- */
-
-export const getUserCount = data => fetch('/v1/users/count', data);
 
 /**
  * 获取订单列表

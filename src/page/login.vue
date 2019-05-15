@@ -3,7 +3,7 @@
     <transition name="form-fade" mode="in-out">
       <section class="form_contianer" v-show="showLogin">
         <div class="manage_tip">
-          <p>elm后台管理系统</p>
+          <p>后台管理系统</p>
         </div>
         <el-form :model="loginForm" :rules="rules" ref="loginForm">
           <el-form-item prop="username">
@@ -48,38 +48,8 @@ export default {
   },
   mounted() {
     this.showLogin = true;
-    // if (!this.adminInfo.id) {
-    // 	this.getAdminData()
-    // }
-  },
-  computed: {
-    // ...mapState(['adminInfo']),
   },
   methods: {
-    // ...mapActions(['getAdminData']),
-    // async submitForm() {
-    //   this.$axios.get('/user/login/22/11').then(res => console.log(res, 'res'))
-    //   this.$axios
-    //     .post(
-    //       "/user/login",
-    //       JSON.stringify(
-    //         {
-    //           username: this.loginForm.username,
-    //           password: this.loginForm.password
-    //         }),
-    // {
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json"
-    //   },
-    //   mode: "cors",
-    //   cache: "force-cache"
-    // }
-    // )
-    //     .then(res => console.log(res, "res2323ES"));
-    // const res = await login({username: this.loginForm.username, password: this.loginForm.password})
-    // console.log(res, 'res');
-    // }
     async submitForm(formName) {
       this.$refs[formName].validate(async valid => {
         if (valid) {

@@ -11,7 +11,7 @@ let routerMode = 'hash';
 let baseImgPath;
 
 if (process.env.NODE_ENV == 'development') {
-	baseUrl = 'http://192.168.43.231:9999';
+	baseUrl = '';
     baseImgPath = '/img/';
 }else{
 	baseUrl = 'http://107.6.141.229:9999';

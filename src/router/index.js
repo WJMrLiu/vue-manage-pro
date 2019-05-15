@@ -19,7 +19,9 @@ const shopList = r =>require.ensure([], () => r(require('@/page/shopList')), 'sh
 const foodList = r =>require.ensure([], () => r(require('@/page/foodList')), 'foodList');
 const uploadImg = r =>require.ensure([], () => r(require('@/page/uploadImg')), 'uploadImg');
 const vueEdit = r =>require.ensure([], () => r(require('@/page/vueEdit')), 'vueEdit');
-const adminSet = r =>require.ensure([], () => r(require('@/page/adminSet')), 'adminSet');
+const info = r =>require.ensure([], () => r(require('@/views/Forms/stepform/step1')), 'form');
+const confirm = r =>require.ensure([], () => r(require('@/views/Forms/stepform/step2')), 'form');
+const result = r =>require.ensure([], () => r(require('@/views/Forms/stepform/step3')), 'form');
 const sendMessage = r =>require.ensure([], () => r(require('@/page/sendMessage')), 'sendMessage');
 const explain = r =>require.ensure([], () => r(require('@/page/explain')), 'explain');
 const exportExcel = r =>require.ensure([],() => r(require('@/views/excel/exportExcel')),'exportExcel');
@@ -78,9 +80,19 @@ const router = new Router({
                         meta: {title:['编辑', '文本编辑']},
                     },
                     {
-                        path: '/adminSet',
-                        component: adminSet,
-                        meta: {title:['设置', '管理员设置']},
+                        path: '/info',
+                        component: info,
+                        meta: {title:['表单', '基本信息']},
+                    },
+                    {
+                        path: '/confirm',
+                        component: confirm,
+                        meta: {title:['表单', '确认信息']},
+                    },
+                    {
+                        path: '/result',
+                        component: result,
+                        meta: {title:['表单', '信息提交完成']},
                     },
                     {
                         path: '/sendMessage',
