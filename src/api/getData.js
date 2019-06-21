@@ -185,6 +185,12 @@ export const deleteFood = data => fetch('/user/deleteUser', data, 'POST');
 export const getUserList = data => fetch('/user/getUserList', data, 'POST');
 
 /**
+ * 获取远程数据
+ */
+
+export const remoteSearch = data => fetch('/user/remoteSearch', data, 'POST');
+
+/**
  * 获取订单列表
  */
 

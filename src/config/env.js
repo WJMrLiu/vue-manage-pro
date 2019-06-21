@@ -14,7 +14,7 @@ if (process.env.NODE_ENV == 'development') {
 	baseUrl = '';
     baseImgPath = '/img/';
 }else{
-	baseUrl = 'http://107.6.141.229:9999';
+	baseUrl = 'http://107.6.141.243:80/store';
     // baseImgPath = '//elm.cangdu.org/img/';
 }
 

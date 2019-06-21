@@ -29,6 +29,7 @@ export default {
   name: 'userList',
   data() {
     return {
+      msg: 'nihao',
       tableData: [],
       currentRow: null,
       offset: 0,

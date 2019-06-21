@@ -38,6 +38,12 @@
             <el-menu-item index="exportExcel">下载excel</el-menu-item>
             <el-menu-item index="uploadExcel">导入excel</el-menu-item>
           </el-submenu>
+          <el-submenu index="9">
+            <template slot="title">
+              <i class="el-icon-document"></i>远程搜索
+            </template>
+            <el-menu-item index="remoteSearch">远程搜索</el-menu-item>
+          </el-submenu>
         </el-menu>
       </el-col>
       <el-col :span="20" style="height: 100%;overflow: auto;">
@@ -64,9 +70,6 @@ export default {
 
 <style lang="less" scoped>
 @import '../style/mixin';
-// .manage_page{
-
-// }
 </style>
 <style>
 .iconfont {

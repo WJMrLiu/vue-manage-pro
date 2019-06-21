@@ -5,7 +5,7 @@ import "nprogress/nprogress.css";
 import NotFound from "../views/404";
 import Forbidden from "../views/403";
 import findLast from "lodash/findLast";
-import { check, isLogin } from "../utils/auth";
+// import { check, isLogin } from "../utils/auth";
 
 Vue.use(Router);
 
@@ -26,6 +26,7 @@ const sendMessage = r =>require.ensure([], () => r(require('@/page/sendMessage')
 const explain = r =>require.ensure([], () => r(require('@/page/explain')), 'explain');
 const exportExcel = r =>require.ensure([],() => r(require('@/views/excel/exportExcel')),'exportExcel');
 const uploadExcel = r =>require.ensure([],() => r(require('@/views/excel/uploadExcel')),'uploadExcel');
+const remoteSearch = r =>require.ensure([],() => r(require('@/page/remoteSearch')),'remoteSearch');
 const router = new Router({
         // mode: 'history',
         strict: process.env.NODE_ENV !== 'production',
@@ -42,77 +43,81 @@ const router = new Router({
                     {
                         path: '',
                         component: home,
-                        meta: {title: ['首页']},
+                        meta: ['首页'],
                     },
                     {
                         path: '/addShop',
                         component: addShop,
-                        meta: {title:['添加数据', '添加商铺']},
+                        meta: ['添加数据', '添加商铺'],
                     },
                     {
                         path: '/addGoods',
                         component: addGoods,
-                        meta: {title:['添加数据', '添加商品']},
+                        meta: ['添加数据', '添加商品'],
                     },
                     {
                         path: '/userList',
                         component: userList,
-                        meta: {title:['数据管理', '用户列表']},
+                        meta: ['数据管理', '用户列表'],
                     },
                     {
                         path: '/shopList',
                         component: shopList,
-                        meta: {title:['数据管理', '商家列表']},
+                        meta: ['数据管理', '商家列表'],
                     },
                     {
                         path: '/foodList',
                         component: foodList,
-                        meta: {title:['数据管理', '商家列表']},
+                        meta: ['数据管理', '商家列表'],
                     },
                     {
                         path: '/uploadImg',
                         component: uploadImg,
-                        meta: {title:['文本编辑', 'MarkDown']},
+                        meta: ['文本编辑', 'MarkDown'],
                     },
                     {
                         path: '/vueEdit',
                         component: vueEdit,
-                        meta: {title:['编辑', '文本编辑']},
+                        meta: ['编辑', '文本编辑'],
                     },
                     {
                         path: '/info',
                         component: info,
-                        meta: {title:['表单', '基本信息']},
+                        meta: ['表单', '基本信息'],
                     },
                     {
                         path: '/confirm',
                         component: confirm,
-                        meta: {title:['表单', '确认信息']},
+                        meta: ['表单', '确认信息'],
                     },
                     {
                         path: '/result',
                         component: result,
-                        meta: {title:['表单', '信息提交完成']},
+                        meta: ['表单', '信息提交完成'],
                     },
                     {
                         path: '/sendMessage',
                         component: sendMessage,
-                        meta: {title:['设置', '发送通知']},
+                        meta: ['设置', '发送通知'],
                     },
                     {
                         path: '/explain',
                         component: explain,
-                        meta: {title:['说明', '说明']},
+                        meta: ['说明', '说明'],
                     },
                     {
                         path: '/exportExcel',
                         component: exportExcel,
-                        meta: {title:['下载', '下载']},
+                        meta: ['下载', '下载'],
                     },
                     {
                         path: '/uploadExcel',
                         component: uploadExcel,
-                        meta: {title:['上传', '上传']},
+                        meta: ['上传', '上传'],
+                    },{
+                        path:'/remoteSearch',
+                        component: remoteSearch,
+                        meta: ['远程搜索']
                     },
                 ],
             },
@@ -135,23 +140,23 @@ router.beforeEach((to, from, next) => {
     if (to.path !== from.path) {
         NProgress.start();
     }
-    const record = findLast(to.matched, record => record.meta.authority)
-    if(record && !check(record.meta.authority)){ // 没有权限
-        if(!isLogin() && to.path !== '/login'){
-            next({
-                path:'/login'
-            })
-        } else if(to.path !== '/403'){
-            this.$notify.error({
-                title: '403',
-                message: '你没有权限访问，请联系管理员咨询。'
-              });
-              next({
-                path: "/403"
-              });
-        }
-        NProgress.done();
-    }
+    // const record = findLast(to.matched, record => record.meta.authority)
+    // if(record && !check(record.meta.authority)){ // 没有权限
+    //     if(!isLogin() && to.path !== '/login'){
+    //         next({
+    //             path:'/login'
+    //         })
+    //     } else if(to.path !== '/403'){
+    //         this.$notify.error({
+    //             title: '403',
+    //             message: '你没有权限访问，请联系管理员咨询。'
+    //           });
+    //           next({
+    //             path: "/403"
+    //           });
+    //     }
+    //     NProgress.done();
+    // }
     next();
 });
 

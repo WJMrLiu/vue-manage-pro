@@ -54,7 +54,7 @@ compiler.plugin('compilation', function (compilation) {
 var context = config.dev.context
 
 switch(process.env.NODE_ENV){
-    case 'local': var proxypath = 'http://192.168.43.231:9999'; break;
+    case 'local': var proxypath = 'http://192.168.43.243:80'; break;
     case 'online': var proxypath = 'https://easy-mock.com/mock/5c4d6266857c7f670bc96b76/example'; break;
 }
 var options = {
